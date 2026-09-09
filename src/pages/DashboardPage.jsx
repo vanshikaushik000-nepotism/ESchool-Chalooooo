@@ -2,19 +2,13 @@ import React from 'react';
 import { useApp } from '../context/AppContext';
 import { 
   TrendingUp, 
-  BookOpen, 
   Award, 
   Clock, 
   CheckCircle2, 
   AlertCircle, 
-  ArrowUpRight, 
-  Calendar, 
-  Zap, 
   Sparkles,
   ChevronRight,
-  Flame,
-  Target,
-  BarChart2
+  Flame
 } from 'lucide-react';
 
 export const DashboardPage = () => {

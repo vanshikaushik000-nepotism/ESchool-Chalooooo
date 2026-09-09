@@ -5,10 +5,7 @@ import {
   Pause, 
   RotateCcw, 
   Volume2, 
-  Flame, 
-  CheckCircle2, 
-  Sparkles,
-  Zap
+  Flame
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
@@ -23,13 +20,16 @@ export const SelfStudyFocusPage = () => {
     let timer = null;
     if (isRunning && timeLeft > 0) {
       timer = setInterval(() => {
-        setTimeLeft(prev => prev - 1);
+        setTimeLeft(prev => {
+          if (prev <= 1) {
+            setIsRunning(false);
+            setSessionsCompleted(s => s + 1);
+            confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 } });
+            return 0;
+          }
+          return prev - 1;
+        });
       }, 1000);
-    } else if (timeLeft === 0 && isRunning) {
-      setIsRunning(false);
-      setSessionsCompleted(prev => prev + 1);
-      confetti({ particleCount: 100, spread: 80, origin: { y: 0.6 } });
-      alert('Focus session completed! Take a well-deserved break.');
     }
     return () => clearInterval(timer);
   }, [isRunning, timeLeft]);

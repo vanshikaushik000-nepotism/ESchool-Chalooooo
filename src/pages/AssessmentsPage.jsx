@@ -7,8 +7,7 @@ import {
   CheckCircle2, 
   Award, 
   BookOpen, 
-  Sparkles,
-  ChevronRight
+  Sparkles
 } from 'lucide-react';
 
 export const AssessmentsPage = () => {

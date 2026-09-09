@@ -5,10 +5,7 @@ import {
   Bell, 
   Menu, 
   Sparkles, 
-  Calendar, 
-  Award,
-  CheckCircle2,
-  X
+  Award
 } from 'lucide-react';
 
 export const Header = () => {

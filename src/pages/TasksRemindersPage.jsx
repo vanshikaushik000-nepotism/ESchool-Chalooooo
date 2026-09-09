@@ -4,11 +4,7 @@ import {
   CheckSquare, 
   Plus, 
   Trash2, 
-  Clock, 
-  AlertCircle, 
-  CheckCircle2, 
-  Filter,
-  Tag
+  Clock
 } from 'lucide-react';
 
 export const TasksRemindersPage = () => {

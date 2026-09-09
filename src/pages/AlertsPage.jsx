@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { 
   Bell, 
-  CheckCircle2, 
   AlertTriangle, 
   Info, 
   Trash2, 
-  Filter,
   Check
 } from 'lucide-react';
 

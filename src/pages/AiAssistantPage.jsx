@@ -4,13 +4,8 @@ import {
   Bot, 
   Send, 
   Sparkles, 
-  BookOpen, 
-  HelpCircle, 
-  Lightbulb, 
   User, 
-  RefreshCw,
-  Code,
-  Zap
+  RefreshCw
 } from 'lucide-react';
 
 export const AiAssistantPage = () => {
