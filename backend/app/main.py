@@ -22,14 +22,23 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# Enable CORS for React frontend
+# Parse allowed origins dynamically from environment settings (.env / system env)
+raw_origins = settings.ALLOWED_ORIGINS
+if isinstance(raw_origins, str):
+    allowed_origins = [origin.strip() for origin in raw_origins.split(",") if origin.strip()]
+elif isinstance(raw_origins, list):
+    allowed_origins = raw_origins
+else:
+    allowed_origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "*"],
+    allow_origins=allowed_origins if allowed_origins else ["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 @app.get("/")
 async def root():
